@@ -1,0 +1,52 @@
+* {
+    background-color: #00006b;
+    color: wheat;
+}
+
+.wrapper {
+    max-width: -webkit-calc(800px - (30px * 2));
+    max-width: calc(800px - (30px * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 266%;
+}
+
+a {
+    text-decoration: inherit;
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 133%;
+}
+
+body {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+    height: auto;
+    overflow-x: hidden;
+}
+
+body,
+button,
+html,
+input,
+select,
+textarea {
+    -webkit-font-smoothing: antialiased;
+}
+
+span {
+    opacity: 0;
+    transition: all 1.66s ease;
+}
+
+span.fade {
+    opacity: 1;
+}
