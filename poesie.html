@@ -8,65 +8,98 @@
     <title>Poésie</title>
     <style>
         .poem {
-            padding: 20px;
-            text-align: center;
-            font-family: Arial, sans-serif;
+          padding: 20px;
+          text-align: center;
         }
 
         .verse {
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: all 0.5s ease;
-            opacity: 1;
-            transform: scale(1);
+          cursor: pointer;
+          margin-bottom: 5px;
+          transition: all 0.5s ease;
+          opacity: 1;
         }
-
         .hidden {
             opacity: 0;
             transform: scale(0);
         }
-    </style>
+
+      </style>
 </head>
 
 <body>
-
+<div class="wrapper">
     <div class="poem">
-        <div class="verse" id="verse1">Verse 1</div>
-        <div class="verse" id="verse2">Verse 2</div>
-        <div class="verse" id="verse3">Verse 3</div>
-        <div class="verse" id="verse4">Verse 4</div>
-    </div>
+  <div class="verse" id="verse1">I was born in a dream-like cell</div>
+  <div class="verse" id="verse2">Faces of the same secret</div>
+  <div class="verse" id="verse3"></div>
+  <!-- ... Repeat for verses 4 to 13 ... -->
+</div>
+</div>
 
-    <script>
-        const verses = [
-            "Verse 1 - Line 1\nVerse 1 - Line 2",
-            "Verse 2 - Line 1\nVerse 2 - Line 2",
-            "Verse 3 - Line 1\nVerse 3 - Line 2",
-            "Verse 4 - Line 1\nVerse 4 - Line 2",
-        ];
+<audio id="audio" src="Just A 4 Second Magical Wind Chimes Harp Sound.mp3" preload="auto"></audio>
 
-        const verseElements = document.querySelectorAll(".verse");
-        verseElements.forEach((verseElement, index) => {
-            verseElement.addEventListener("click", () => {
-                const originalText = "Verse " + (index + 1);
-                const newText = verses[index];
-
-                if (verseElement.textContent === originalText) {
-                    verseElement.classList.add("hidden");
-                    setTimeout(() => {
-                        verseElement.textContent = newText;
-                        verseElement.classList.remove("hidden");
-                    }, 500);
-                } else {
-                    verseElement.classList.add("hidden");
-                    setTimeout(() => {
-                        verseElement.textContent = originalText;
-                        verseElement.classList.remove("hidden");
-                    }, 500);
-                }
-            });
-        });
-    </script>
+<script>
+    const poem1 = [
+      "I was born in a dream-like cell",
+      "Verse 2 of Poem 1",
+      "Verse 3 of Poem 1",
+      // ... Add verses 4 to 13 of Poem 1 ...
+    ];
+    
+    const poem2 = [
+      "Where similar shades of me are made",
+      "Verse 2 of Poem 2",
+      "Verse 3 of Poem 2",
+      // ... Add verses 4 to 13 of Poem 2 ...
+    ];
+  
+    const verseElements = document.querySelectorAll(".verse");
+    const audio = document.getElementById("audio");
+  
+    verseElements.forEach((verseElement, index) => {
+      let isPoem1 = true; // Track which poem the verse is currently from
+      let originalText = poem1[index];
+  
+      verseElement.addEventListener("click", () => {
+        if (isPoem1) {
+          fadeOut(verseElement, () => {
+            verseElement.textContent = poem2[index];
+            fadeIn(verseElement);
+          });
+          playAudio();
+          isPoem1 = false;
+        } else {
+          fadeOut(verseElement, () => {
+            verseElement.textContent = poem1[index];
+            fadeIn(verseElement);
+          });
+          playAudio();
+          isPoem1 = true;
+        }
+      });
+    });
+  
+    function fadeOut(element, callback) {
+      element.style.opacity = 0;
+      setTimeout(() => {
+        callback();
+      }, 500); // Match the duration of the fadeOut transition
+    }
+  
+    function fadeIn(element) {
+      element.style.opacity = 1;
+    }
+  
+    function playAudio() {
+      audio.currentTime = 0;
+      audio.play();
+    }
+  </script>
+  
 </body>
 
 </html>
+
+
+
+
