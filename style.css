@@ -1,6 +1,7 @@
 * {
     background-color: #00006b;
     color: wheat;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .wrapper {
@@ -13,7 +14,6 @@
 }
 
 h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 266%;
 }
 
@@ -23,7 +23,6 @@ a {
 }
 
 p {
-    font-family: 'Georgia', serif;
     font-size: 133%;
 }
 
