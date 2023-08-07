@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
     <title>Poésie</title>
+    <style>
+        .poem {
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .verse {
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.5s ease;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: scale(0);
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="poem">
+        <div class="verse" id="verse1">Verse 1</div>
+        <div class="verse" id="verse2">Verse 2</div>
+        <div class="verse" id="verse3">Verse 3</div>
+        <div class="verse" id="verse4">Verse 4</div>
+    </div>
+
+    <script>
+        const verses = [
+            "Verse 1 - Line 1\nVerse 1 - Line 2",
+            "Verse 2 - Line 1\nVerse 2 - Line 2",
+            "Verse 3 - Line 1\nVerse 3 - Line 2",
+            "Verse 4 - Line 1\nVerse 4 - Line 2",
+        ];
+
+        const verseElements = document.querySelectorAll(".verse");
+        verseElements.forEach((verseElement, index) => {
+            verseElement.addEventListener("click", () => {
+                const originalText = "Verse " + (index + 1);
+                const newText = verses[index];
+
+                if (verseElement.textContent === originalText) {
+                    verseElement.classList.add("hidden");
+                    setTimeout(() => {
+                        verseElement.textContent = newText;
+                        verseElement.classList.remove("hidden");
+                    }, 500);
+                } else {
+                    verseElement.classList.add("hidden");
+                    setTimeout(() => {
+                        verseElement.textContent = originalText;
+                        verseElement.classList.remove("hidden");
+                    }, 500);
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
