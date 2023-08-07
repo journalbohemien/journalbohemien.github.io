@@ -29,7 +29,7 @@
 <body>
 <div class="wrapper">
     <div class="poem">
-  <div class="verse" id="verse1">I was born in a dream-like cell</div>
+  <div class="verse" id="verse1">Experimenting the boundaries of virtual poetry</div>
   <div class="verse" id="verse2">Faces of the same secret</div>
   <div class="verse" id="verse3"></div>
   <!-- ... Repeat for verses 4 to 13 ... -->
@@ -40,7 +40,7 @@
 
 <script>
     const poem1 = [
-      "I was born in a dream-like cell",
+      "Experimenting the boundaries of virtual poetry",
       "Verse 2 of Poem 1",
       "Verse 3 of Poem 1",
       // ... Add verses 4 to 13 of Poem 1 ...
@@ -91,9 +91,20 @@
     }
   
     function playAudio() {
-      audio.currentTime = 0;
-      audio.play();
+  audio.currentTime = 0;
+  audio.play();
+  
+  const fadeOutInterval = setInterval(() => {
+    if (audio.volume > 0.1) {
+      audio.volume -= 0.1;
+    } else {
+      audio.pause();
+      audio.volume = 1; // Reset the volume for next play
+      clearInterval(fadeOutInterval);
     }
+  }, 100); // Gradually reduce volume every 200 milliseconds
+}
+
   </script>
   
 </body>
