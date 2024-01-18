@@ -21,9 +21,9 @@ function playMusicForPart(partId) {
 
 function getMusicForPart(partId) {
     const musicTracks = {
-        'part1': 'path/to/music1.mp3',
-        'part2': 'path/to/music2.mp3',
-        'part3': 'path/to/music3.mp3',
+        'part1': 'path/to/un piano et son piano.wav',
+        'part2': 'path/to/un piano et son piano.wav',
+        'part3': 'path/to/un piano et son piano.wav',
         // Add more parts and their corresponding music files
     };
     return musicTracks[partId] || '';
