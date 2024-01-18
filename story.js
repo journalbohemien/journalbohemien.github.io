@@ -21,16 +21,16 @@ function playMusicForPart(partId) {
 
 function getMusicForPart(partId) {
     const musicTracks = {
-        'part1': '/workspaces/journalbohemien.github.io/Un sax et son piano.wav',
-        'part2': '/workspaces/journalbohemien.github.io/Un sax et son piano.wav',
-        'part3': '/workspaces/journalbohemien.github.io/Un sax et son piano.wav',
+        'part1': 'Un sax et son piano.wav',
+        'part2': 'Un sax et son piano.wav',
+        'part2bis': 'Un sax et son piano.wav',
         // Add more parts and their corresponding music files
     };
     return musicTracks[partId] || '';
 }
 
 function checkProgressOrStart() {
-    const parts = ['part1', 'part2', 'part3']; // Add all parts here
+    const parts = ['part1', 'part2', 'part2bis']; // Add all parts here
     let started = false;
     for (let partId of parts) {
         if (localStorage.getItem(partId)) {

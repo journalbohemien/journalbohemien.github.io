@@ -3,28 +3,28 @@
 <head>
     <title>Interactive Story</title>
     <!-- Add CSS styles if needed -->
-    <script src="story.js"></script>
 </head>
 <body>
     <div id="part1" class="story-part">
         <p>Story part 1...</p>
         <button onclick="makeChoice('part2', 1)">Choice 1 for Part 1</button>
-        <button onclick="makeChoice('part2', 2)">Choice 2 for Part 1</button>
+        <button onclick="makeChoice('part2bis', 2)">Choice 2 for Part 1</button>
     </div>
 
     <div id="part2" class="story-part" style="display:none;">
         <p>Story part 2...</p>
-        <button onclick="makeChoice('part3', 1)">Choice 1 for Part 2</button>
+        <!-- Choices for Part 2 -->
     </div>
 
-    <div id="part3" class="story-part" style="display:none;">
-        <p>Story part 3...</p>
-        <!-- Add more choices or ending -->
+    <div id="part2bis" class="story-part" style="display:none;">
+        <p>Story part 2bis...</p>
+        <!-- Choices for Part 2bis -->
     </div>
+
+    <!-- Add more parts as needed -->
 
     <audio id="audioPlayer"></audio>
 
-    <!-- Add JavaScript here or link to an external JS file -->
     <script>
         // JavaScript code goes here
     </script>
