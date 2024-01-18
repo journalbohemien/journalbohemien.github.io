@@ -24,13 +24,17 @@ function getMusicForPart(partId) {
         'part1': 'Un sax et son piano.wav',
         'part2': 'Un sax et son piano.wav',
         'part2bis': 'Un sax et son piano.wav',
+        'part3': 'Un sax et son piano.wav',
+        'part3bis': 'Un sax et son piano.wav',
+        'part4': 'Un sax et son piano.wav',
+        'part4bis': 'Un sax et son piano.wav',
         // Add more parts and their corresponding music files
     };
     return musicTracks[partId] || '';
 }
 
 function checkProgressOrStart() {
-    const parts = ['part1', 'part2', 'part2bis']; // Add all parts here
+    const parts = ['part1', 'part2', 'part2bis', 'part3', 'part3bis', 'part4','part4bis']; // Add all parts here
     let started = false;
     for (let partId of parts) {
         if (localStorage.getItem(partId)) {
