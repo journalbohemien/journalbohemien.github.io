@@ -21,9 +21,9 @@ function playMusicForPart(partId) {
 
 function getMusicForPart(partId) {
     const musicTracks = {
-        'part1': 'path/to/un piano et son piano.wav',
-        'part2': 'path/to/un piano et son piano.wav',
-        'part3': 'path/to/un piano et son piano.wav',
+        'part1': '/workspaces/journalbohemien.github.io/Un sax et son piano.wav',
+        'part2': '/workspaces/journalbohemien.github.io/Un sax et son piano.wav',
+        'part3': '/workspaces/journalbohemien.github.io/Un sax et son piano.wav',
         // Add more parts and their corresponding music files
     };
     return musicTracks[partId] || '';
