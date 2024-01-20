@@ -1,10 +1,13 @@
+* {
+    background: #00006b;
+    color: wheat;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #00006b;
-    color: #333;
 }
 
 .story-part {
