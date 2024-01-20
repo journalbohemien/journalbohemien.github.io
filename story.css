@@ -53,6 +53,6 @@ button:hover {
 }
 
 .content-container {
-    animation-duration: 0.5s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
