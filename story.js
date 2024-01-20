@@ -54,3 +54,32 @@ window.history.pushState(null, null, window.location.href);
 window.onpopstate = function () {
     window.history.go(1);
 };
+
+function navigateToPart(partId) {
+    let currentPart = document.querySelector('.story-part:not([style*="display: none"]) .content-container');
+
+    if (currentPart) {
+        // Apply fade-out animation
+        currentPart.style.animationName = 'fadeOut';
+
+        // After the animation completes, switch content and fade in
+        setTimeout(() => {
+            switchContent(partId);
+        }, 500); // Duration of the fade-out animation
+    } else {
+        switchContent(partId);
+    }
+}
+
+function switchContent(partId) {
+    // Hide all parts
+    document.querySelectorAll('.story-part').forEach(part => part.style.display = 'none');
+
+    // Show the next part
+    let nextPart = document.getElementById(partId);
+    nextPart.style.display = 'block';
+
+    // Apply fade-in animation to new part
+    let newContent = nextPart.querySelector('.content-container');
+    newContent.style.animationName = 'fadeIn';
+}
